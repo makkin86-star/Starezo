@@ -2,66 +2,93 @@
 <html lang="ja"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>スタレゾ シーズン4「光跡の祈願」ダンジョン攻略ガイド</title>
+<meta name="description" content="スターレゾナンス日本版シーズン4「光跡の祈願」極限空間の攻略ガイド。解放済み3種（鏡中の審判・巨竜の爪痕・荒廃の庭）のルート・役割別ギミック・全滅パターン・チェックリスト＋未解放3種プレビュー。">
+<meta property="og:title" content="スタレゾ S4「光跡の祈願」ダンジョン攻略ガイド（日本版）">
+<meta property="og:description" content="解放済み3種（鏡中の審判・巨竜の爪痕・荒廃の庭）のルート・役割別ギミック・全滅パターン・チェックリスト＋未解放3種プレビュー。スマホ＆ダークモード対応。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://makkin86-star.github.io/Starezo/">
+<meta property="og:site_name" content="スタレゾ S4 攻略ガイド">
+<meta name="theme-color" content="#5865F2">
 <style>
-:root{--bg:#f4f6fb;--card:#fff;--ink:#1d2433;--sub:#5b6478;--acc:#3b6df0;--ok:#16a34a;--ng:#9ca3af;--warn:#d97706;--bad:#dc2626;--line:#e3e7f0}
+:root{--bg:#f4f6fb;--card:#fff;--ink:#1d2433;--sub:#5b6478;--acc:#3b6df0;--ok:#16a34a;--ng:#9ca3af;--warn:#d97706;--bad:#dc2626;--line:#e3e7f0;--nav-bg:#fff;--nav-pill:#eef2ff;--nav-ink:#27408f;--nav-on-bg:#dcfce7;--nav-on-ink:#166534;--nav-pv-bg:#f1f2f5;--nav-pv-ink:#6b7280;--th-bg:#eef2ff;--note-bg:#eff6ff;--warn-bg:#fffbeb;--alert-bg:#fef2f2;--ok-bg:#f0fdf4;--gim-bg:#fcfdff;--role-bg:#f6f8fc;--wipe-bg:#fff7ed;--check-bg:#f0fdf4;--route-bg:#f8fafc;--noimg-bg:#f3f4f6;--noimg-ink:#4b5563;--pv-bg:#f7f7f9;--rec-bg:#f5f3ff;--rec-ink:#6d28d9;--rec-bd:#a78bfa}
+[data-theme="dark"]{--bg:#1e1f22;--card:#2b2d31;--ink:#f2f3f5;--sub:#b5bac1;--acc:#7c94ff;--ok:#22c55e;--ng:#6d7280;--warn:#f59e0b;--bad:#ef4444;--line:#3f4147;--nav-bg:#232428;--nav-pill:#353740;--nav-ink:#dbe2ff;--nav-on-bg:#1c3d2a;--nav-on-ink:#86efac;--nav-pv-bg:#2b2d31;--nav-pv-ink:#9ca3af;--th-bg:#353740;--note-bg:#1e293b;--warn-bg:#332815;--alert-bg:#3a1d21;--ok-bg:#182f22;--gim-bg:#313338;--role-bg:#232428;--wipe-bg:#352418;--check-bg:#1b2e23;--route-bg:#232428;--noimg-bg:#232428;--noimg-ink:#b5bac1;--pv-bg:#26272b;--rec-bg:#2e2447;--rec-ink:#c4b5fd;--rec-bd:#7c3aed}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:64px}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;font-size:16px;-webkit-text-size-adjust:100%}
-header{background:linear-gradient(135deg,#223a8f,#5b3fd0);color:#fff;padding:28px 18px 22px}
-header h1{margin:0 0 6px;font-size:1.45rem;line-height:1.4}
+header{background:linear-gradient(135deg,#223a8f,#5b3fd0);color:#fff;padding:24px 16px 20px;position:relative}
+.hdr-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+header h1{margin:0 0 6px;font-size:1.4rem;line-height:1.4}
 header p{margin:4px 0;font-size:.9rem;opacity:.95}
-nav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;padding:8px 10px;box-shadow:0 2px 6px rgba(0,0,0,.06)}
-nav a{display:inline-block;padding:7px 13px;margin-right:6px;border-radius:999px;background:#eef2ff;color:#27408f;text-decoration:none;font-size:.88rem;font-weight:600}
-nav a.pv{background:#f1f2f5;color:#6b7280}
-nav a.on{background:#dcfce7;color:#166534}
-main{max-width:760px;margin:0 auto;padding:14px 12px 60px}
-section{background:var(--card);border-radius:14px;padding:18px 14px;margin:16px 0;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-section.preview{background:#f7f7f9;border:2px dashed #c4c8d4}
-h2{font-size:1.3rem;margin:0 0 10px;padding-bottom:8px;border-bottom:3px solid var(--acc);line-height:1.4}
-section.preview h2{border-color:#9ca3af}
+.theme-btn{flex-shrink:0;background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:6px 12px;font-size:.82rem;font-weight:700;cursor:pointer;backdrop-filter:blur(4px)}
+.theme-btn:active{transform:scale(.96)}
+nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;padding:8px 10px;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+nav a{display:inline-block;padding:7px 13px;margin-right:6px;border-radius:999px;background:var(--nav-pill);color:var(--nav-ink);text-decoration:none;font-size:.88rem;font-weight:600}
+nav a.pv{background:var(--nav-pv-bg);color:var(--nav-pv-ink)}
+nav a.on{background:var(--nav-on-bg);color:var(--nav-on-ink)}
+main{max-width:760px;margin:0 auto;padding:14px 12px 72px}
+section{background:var(--card);border-radius:14px;padding:18px 14px;margin:16px 0;box-shadow:0 1px 4px rgba(0,0,0,.1)}
+section.preview{background:var(--pv-bg);border:2px dashed var(--line)}
+h2{font-size:1.28rem;margin:0 0 10px;padding-bottom:8px;border-bottom:3px solid var(--acc);line-height:1.4;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+section.preview h2{border-color:var(--ng)}
 h3{font-size:1.1rem;margin:22px 0 8px;padding-left:10px;border-left:5px solid var(--acc);line-height:1.4}
 h4{font-size:1rem;margin:0 0 6px}
 p{margin:8px 0}
 a{color:var(--acc)}
-.badge{display:inline-block;font-size:.75rem;font-weight:700;padding:2px 9px;border-radius:999px;color:#fff;vertical-align:middle;margin-left:4px}
+.badge{display:inline-block;font-size:.74rem;font-weight:700;padding:2px 9px;border-radius:999px;color:#fff;vertical-align:middle}
 .b-ok{background:var(--ok)}.b-ng{background:var(--ng)}.b-today{background:var(--warn)}
+.copy-btn{margin-left:auto;background:var(--nav-pill);color:var(--nav-ink);border:1px solid var(--line);border-radius:8px;padding:4px 9px;font-size:.75rem;font-weight:600;cursor:pointer}
+.copy-btn:active{transform:scale(.95)}
 table{width:100%;border-collapse:collapse;font-size:.88rem;margin:10px 0}
 th,td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
-th{background:#eef2ff}
+th{background:var(--th-bg)}
 .tw{overflow-x:auto}
 .box{border-radius:10px;padding:10px 12px;margin:12px 0;font-size:.92rem}
-.note{background:#eff6ff;border-left:4px solid #3b82f6}
-.warn{background:#fffbeb;border-left:4px solid var(--warn)}
-.alert{background:#fef2f2;border-left:4px solid var(--bad)}
-.ok{background:#f0fdf4;border-left:4px solid var(--ok)}
-.gim{border:1px solid var(--line);border-radius:12px;padding:12px;margin:12px 0;background:#fcfdff}
+.note{background:var(--note-bg);border-left:4px solid #3b82f6}
+.warn{background:var(--warn-bg);border-left:4px solid var(--warn)}
+.alert{background:var(--alert-bg);border-left:4px solid var(--bad)}
+.ok{background:var(--ok-bg);border-left:4px solid var(--ok)}
+.gim{border:1px solid var(--line);border-radius:12px;padding:12px;margin:12px 0;background:var(--gim-bg)}
 .num{display:inline-block;background:var(--acc);color:#fff;border-radius:50%;width:24px;height:24px;line-height:24px;text-align:center;font-size:.8rem;margin-right:7px}
 .roles{list-style:none;margin:8px 0 0;padding:0}
-.roles li{margin:6px 0;padding:6px 8px;background:#f6f8fc;border-radius:8px;font-size:.93rem}
+.roles li{margin:6px 0;padding:7px 9px;background:var(--role-bg);border-radius:8px;font-size:.93rem}
 .chip{display:inline-block;font-size:.72rem;font-weight:700;padding:1px 8px;border-radius:6px;color:#fff;margin-right:6px}
 .chip.t{background:#2563eb}.chip.h{background:#16a34a}.chip.d{background:#dc2626}.chip.a{background:#6b7280}
-.rec{display:inline-block;font-size:.68rem;border:1px solid #a78bfa;color:#6d28d9;border-radius:6px;padding:0 5px;margin-right:6px;background:#f5f3ff}
+.rec{display:inline-block;font-size:.68rem;border:1px solid var(--rec-bd);color:var(--rec-ink);border-radius:6px;padding:0 5px;margin-right:6px;background:var(--rec-bg)}
 figure{margin:12px 0}
-figure img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line);display:block}
+figure img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line);display:block;cursor:zoom-in}
 figcaption{font-size:.8rem;color:var(--sub);margin-top:4px}
 .src{font-size:.75rem}
-.noimg{background:#f3f4f6;border:1px dashed #9ca3af;border-radius:8px;padding:12px;font-size:.88rem;color:#4b5563;margin:12px 0}
-.wipe{background:#fff7ed;border-radius:10px;padding:10px 12px;margin:14px 0}
+.noimg{background:var(--noimg-bg);border:1px dashed var(--ng);border-radius:8px;padding:12px;font-size:.88rem;color:var(--noimg-ink);margin:12px 0}
+.wipe{background:var(--wipe-bg);border-radius:10px;padding:10px 12px;margin:14px 0}
 .wipe ul{margin:4px 0 0;padding-left:20px}
 .check{list-style:none;padding:0;margin:6px 0}
-.check li{margin:6px 0;padding:8px 10px;background:#f0fdf4;border-radius:8px}
-.check input{width:20px;height:20px;vertical-align:middle;margin-right:6px}
-.check label{display:block}
+.check li{margin:6px 0;padding:8px 10px;background:var(--check-bg);border-radius:8px}
+.check input{width:20px;height:20px;vertical-align:middle;margin-right:6px;accent-color:var(--ok)}
+.check label{display:block;cursor:pointer}
+.check-reset{background:transparent;color:var(--sub);border:1px solid var(--line);border-radius:8px;padding:4px 10px;font-size:.78rem;cursor:pointer;margin-top:4px}
 ul{padding-left:20px}
 .legend{font-size:.82rem;color:var(--sub)}
 .kv{display:grid;grid-template-columns:1fr;gap:6px}
 footer{font-size:.8rem;color:var(--sub);padding:10px 14px 40px;max-width:760px;margin:0 auto}
-.route{font-family:inherit;background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:.9rem}
-</style></head><body>
+.route{font-family:inherit;background:var(--route-bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:.9rem}
+#lb{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.9);padding:16px;flex-direction:column;align-items:center;justify-content:center}
+#lb.open{display:flex}
+#lb img{max-width:100%;max-height:82vh;border-radius:8px;box-shadow:0 4px 24px rgba(0,0,0,.5)}
+#lb p{color:#e5e7eb;font-size:.85rem;margin:10px 0 0;text-align:center}
+#totop{position:fixed;right:14px;bottom:18px;z-index:90;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:1.1rem;font-weight:700;box-shadow:0 3px 10px rgba(0,0,0,.22);cursor:pointer;display:none}
+#totop.show{display:block}
+</style>
+<script>
+(function(){var s=localStorage.getItem('sr-theme');var d=s?s==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.setAttribute('data-theme','dark');})();
+</script>
+</head><body>
 <header>
+<div class="hdr-top">
 <h1>スタレゾ シーズン4「光跡の祈願」<br>ダンジョン攻略ガイド（日本版）</h1>
+<button id="themeBtn" class="theme-btn" type="button" aria-label="テーマ切替">🌙</button>
+</div>
 <p>友達に教えるための早見ガイド ／ 情報確認日：2026年11月24日</p>
-<p>🟢 解放済み 3種 ／ ⚪ 未解放 3種（プレビュー）</p>
+<p>🟢 解放済み 3種 ／ ⚪ 未解放 3種（プレビュー） ／ 画像タップで拡大</p>
 </header>
 <nav>
 <a href="#top-summary">まとめ</a>
@@ -256,4 +283,51 @@ footer{font-size:.8rem;color:var(--sub);padding:10px 14px 40px;max-width:760px;m
 </section>
 </main>
 <footer>最終確認日：2026年11月24日</footer>
+<div id="lb" role="dialog" aria-modal="true"><img alt=""><p></p></div>
+<button id="totop" type="button" aria-label="ページ上部へ">↑</button>
+<script>
+(function(){
+  var r=document.documentElement,tb=document.getElementById('themeBtn');
+  function upd(){tb.textContent=r.getAttribute('data-theme')==='dark'?'☀️ ライト':'🌙 ダーク';}
+  upd();
+  tb.addEventListener('click',function(){
+    var dark=r.getAttribute('data-theme')==='dark';
+    if(dark){r.removeAttribute('data-theme');localStorage.setItem('sr-theme','light');}
+    else{r.setAttribute('data-theme','dark');localStorage.setItem('sr-theme','dark');}
+    upd();
+  });
+  var lb=document.getElementById('lb'),lbi=lb.querySelector('img'),lbp=lb.querySelector('p');
+  document.querySelectorAll('figure img').forEach(function(im){
+    im.addEventListener('click',function(){lbi.src=im.src;lbp.textContent=(im.alt||'')+'（タップで閉じる）';lb.classList.add('open');});
+  });
+  lb.addEventListener('click',function(){lb.classList.remove('open');});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('open');});
+  document.querySelectorAll('section[id] > h2').forEach(function(h){
+    var id=h.parentElement.id;
+    if(['mirror','dragon','garden','preview','common','schedule'].indexOf(id)<0)return;
+    var b=document.createElement('button');b.type='button';b.className='copy-btn';b.textContent='🔗 URLコピー';
+    b.addEventListener('click',function(){
+      var u=location.protocol.indexOf('http')===0?(location.origin+location.pathname+'#'+id):('https://makkin86-star.github.io/Starezo/#'+id);
+      if(navigator.clipboard){navigator.clipboard.writeText(u).then(function(){b.textContent='✅ コピー済';setTimeout(function(){b.textContent='🔗 URLコピー';},1800);});}
+      else{prompt('このURLをコピーしてDiscordに貼れます',u);}
+    });
+    h.appendChild(b);
+  });
+  document.querySelectorAll('ul.check').forEach(function(ul,ui){
+    var sec=ul.closest('section');var key='sr-chk-'+(sec?sec.id:ui);
+    var saved={};try{saved=JSON.parse(localStorage.getItem(key)||'{}');}catch(e){}
+    var boxes=ul.querySelectorAll('input[type="checkbox"]');
+    boxes.forEach(function(cb,i){
+      if(saved[i])cb.checked=true;
+      cb.addEventListener('change',function(){saved[i]=cb.checked;try{localStorage.setItem(key,JSON.stringify(saved));}catch(e){}});
+    });
+    var rb=document.createElement('button');rb.type='button';rb.className='check-reset';rb.textContent='チェックをリセット';
+    rb.addEventListener('click',function(){boxes.forEach(function(cb){cb.checked=false;});saved={};try{localStorage.removeItem(key);}catch(e){}});
+    ul.after(rb);
+  });
+  var tt=document.getElementById('totop');
+  window.addEventListener('scroll',function(){tt.classList.toggle('show',window.scrollY>360);},{passive:true});
+  tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
 </body></html>
